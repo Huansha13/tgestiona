@@ -1,0 +1,30 @@
+.example-card {
+  max-width: 250px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+mat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgb(0 0 0 / 35%);
+}
+.mat-card-image {
+  height: 200px;
+  object-fit: cover;
+}
+.wrap-sucursal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.name-sucursal {
+  font-weight: 500;
+}
+.mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .example-card {
+    max-width: 100%;
+  }
+}

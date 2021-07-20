@@ -1,1 +1,26 @@
-<p>add-sucursal works!</p>
+<mat-accordion class="example-headers-align" multi>
+  <mat-expansion-panel expanded="expanded">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Sucursal
+      </mat-panel-title>
+      <mat-panel-description>
+        Registar nuevo sucursal
+        <mat-icon>store</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <form class="form" [formGroup]="form" (ngSubmit)="saveSucursal(form.value)">
+      <mat-form-field appearance="outline">
+        <mat-label>Codigo sucursal</mat-label>
+        <input matInput type="text" formControlName="cod_sucursal">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre sucursal</mat-label>
+        <input matInput type="text" formControlName="nombre">
+      </mat-form-field>
+      <button [disabled]="form.invalid" style="width: 100%; height: 45px" mat-flat-button type="submit" color="primary">Registrar nuevo producto</button>
+    </form>
+
+  </mat-expansion-panel>
+</mat-accordion>

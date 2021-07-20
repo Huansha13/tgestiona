@@ -1,1 +1,15 @@
-<p>list-product works!</p>
+<div class="wrap-prod">
+  <mat-card class="product-card" *ngFor="let data of pro">
+    <mat-card-content>
+      <div class="name-product">
+        <mat-icon>fastfood</mat-icon> {{data.nombre}}
+      </div>
+      <button mat-button class="colorChip">S/. {{data.precio | number: '.2-2'}}</button>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-button [routerLink]="['/update-product', data.cod_producto]"> <mat-icon>edit</mat-icon> Editar</a>
+      <button mat-button color="warn" (click)="deleteProduct(data)"> <mat-icon>delete</mat-icon> Eliminar</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>

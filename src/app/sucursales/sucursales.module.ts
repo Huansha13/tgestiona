@@ -5,6 +5,8 @@ import { SucursalesRoutingModule } from './sucursales-routing.module';
 import { AddSucursalComponent } from './page/add-sucursal/add-sucursal.component';
 import { ListSucursalComponent } from './page/list-sucursal/list-sucursal.component';
 import { UpdateSucursalComponent } from './page/update-sucursal/update-sucursal.component';
+import {MaterialModule} from "../material.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -13,9 +15,11 @@ import { UpdateSucursalComponent } from './page/update-sucursal/update-sucursal.
     ListSucursalComponent,
     UpdateSucursalComponent
   ],
-  imports: [
-    CommonModule,
-    SucursalesRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        SucursalesRoutingModule,
+        MaterialModule,
+        ReactiveFormsModule
+    ]
 })
 export class SucursalesModule { }

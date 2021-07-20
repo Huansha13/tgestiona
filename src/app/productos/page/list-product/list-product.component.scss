@@ -1,0 +1,54 @@
+.product-card {
+  margin-bottom: 25px;
+  position: relative;
+  cursor: pointer;
+}
+mat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgb(0 0 0 / 35%);
+}
+
+.colorChip {
+  background: #FFD740;
+  border-radius: 10000px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+.name-product {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  mat-icon {
+    margin-right: 5px;
+  }
+}
+.spacer {
+  flex: 1 1 auto !important;
+}
+
+
+.wrap-prod {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.btn-delete {
+  position: absolute;
+  right: 10px;
+}
+mat-card-actions {
+  justify-content: flex-end;
+  display: flex;
+}
+@media (max-width: 768px) {
+  .product-card {
+    width: 100%;
+  }
+  .wrap-prod {
+    justify-content: center !important;
+  }
+}

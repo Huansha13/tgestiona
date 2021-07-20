@@ -1,1 +1,22 @@
-<p>update-sucursal works!</p>
+<mat-accordion class="example-headers-align" multi>
+  <mat-expansion-panel expanded="expanded">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Sucursal
+      </mat-panel-title>
+      <mat-panel-description>
+        Actualizar sucursal
+        <mat-icon>store</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <form class="form" [formGroup]="form" (ngSubmit)="updateSucursal(form.value)">
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre sucursal</mat-label>
+        <input matInput type="text" formControlName="nombre">
+      </mat-form-field>
+      <button style="width: 100%; height: 45px" mat-flat-button type="submit" color="accent">Actualizar nuevo producto</button>
+    </form>
+
+  </mat-expansion-panel>
+</mat-accordion>

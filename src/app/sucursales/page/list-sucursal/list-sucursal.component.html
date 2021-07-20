@@ -1,1 +1,12 @@
-<p>list-sucursal works!</p>
+<div class="wrap-sucursal">
+  <mat-card class="example-card" *ngFor="let dt of data">
+    <img mat-card-image [src]="imgPort">
+    <mat-card-content>
+      <h3 class="name-sucursal">{{dt.nombre}}</h3>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-button [routerLink]="['/update-sucursal', dt.cod_sucursal]"> <mat-icon>edit</mat-icon> Editar</a>
+      <button mat-button color="warn" (click)="deleteSucursal(dt)"> <mat-icon>delete</mat-icon> Eliminar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,1 +1,42 @@
-<p>add-user works!</p>
+<mat-accordion class="example-headers-align" multi>
+  <mat-expansion-panel expanded="expanded">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Usuario
+      </mat-panel-title>
+      <mat-panel-description>
+        Registrar nuevo usurio
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <form class="form" [formGroup]="form" (ngSubmit)="saveUser(form.value)">
+      <mat-form-field appearance="outline">
+        <mat-label>Codigo</mat-label>
+        <input matInput type="text" formControlName="cod_usuario">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre completo</mat-label>
+        <input matInput type="text" formControlName="nombre">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Usuario</mat-label>
+        <input matInput type="text" formControlName="usuario">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="clave">
+      </mat-form-field>
+      <mat-form-field appearance="outline" formGroupName="sucursal">
+        <mat-label>Seleccionar sucursal</mat-label>
+        <mat-select formControlName="cod_sucursal">
+          <mat-option value="{{i.cod_sucursal}}" *ngFor="let i of suc">{{i.nombre}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button [disabled]="form.invalid" style="width: 100%; height: 45px" mat-flat-button type="submit" color="primary">Registrar el nuevo usuario</button>
+    </form>
+
+  </mat-expansion-panel>
+</mat-accordion>
+
+<!--<pre>{{form.value | json}}</pre>-->

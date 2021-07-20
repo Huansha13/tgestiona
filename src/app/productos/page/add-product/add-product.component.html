@@ -1,1 +1,32 @@
-<p>add-product works!</p>
+<mat-accordion class="example-headers-align" multi>
+  <mat-expansion-panel expanded="expanded">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Producto
+      </mat-panel-title>
+      <mat-panel-description>
+        Registar nuevo producto
+        <mat-icon>shopping_cart</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <form class="form" [formGroup]="form" (ngSubmit)="send(form.value)">
+      <mat-form-field appearance="outline">
+        <mat-label>Codigo del producto</mat-label>
+        <input matInput type="text" formControlName="cod_producto">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre del producto</mat-label>
+        <input matInput type="text" formControlName="nombre">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Precio</mat-label>
+        <input matInput type="number" formControlName="precio">
+      </mat-form-field>
+      <button [disabled]="form.invalid" style="width: 100%; height: 45px" mat-flat-button type="submit" color="primary">Registrar nuevo producto</button>
+    </form>
+
+  </mat-expansion-panel>
+</mat-accordion>
+
+<!--<pre>{{form.value | json}}</pre>-->
